@@ -1,34 +1,9 @@
-# ⚽ Chatbot IA para Análisis Predictivo de Datos Deportivos
-
-Este repositorio contiene el código fuente y la arquitectura completa del proyecto **"Desarrollo de un chat bot con IA para datos deportivos"**. 
-
-El sistema integra ingeniería de datos en tiempo real, un modelo predictivo entrenado para la detección de *Smart Money* y una interfaz conversacional inteligente impulsada por Modelos de Lenguaje Grande (LLMs).
-
-## 🧠 Arquitectura y Metodología
-
-El núcleo del proyecto se divide en tres subsistemas principales:
-
-1. **Motor de Extracción y Minería de Datos:** Utiliza técnicas de *Web Scraping* para capturar métricas en vivo (cuotas, volúmenes transaccionados, minuto del partido). Los datos históricos se procesan mediante estructuras columnares eficientes (`.parquet`).
-2. **Modelo de Machine Learning:** Se ha desarrollado un clasificador basado en **Random Forest** utilizando `scikit-learn`. El algoritmo aplica una métrica matemática propia denominada *Porcentaje de Impacto* para normalizar los volúmenes de inyección de capital, logrando una **precisión del 81%** en la detección de oportunidades de mercado.
-3. **Agente Conversacional y UI:** Interfaz web interactiva construida con **Streamlit** que permite al usuario consultar partidos en directo, visualizar el radar de alertas y recibir análisis en lenguaje natural.
-
-## 🛠️ Stack Tecnológico
-
-* **Lenguaje:** Python 3.10+
-* **Machine Learning:** Scikit-Learn[cite: 1], Pandas, Numpy
-* **Agente IA:** LangChain / OpenAI API (o el proveedor LLM configurado)
-* **Scraping en vivo:** Playwright
-* **Interfaz Gráfica:** Streamlit
-
-## 🚀 Guía de Instalación y Despliegue
-
-Sigue estos pasos para levantar el entorno de forma local:
-
-### 1. Clonar el repositorio y preparar el entorno
-Se recomienda aislar las dependencias utilizando un entorno virtual.
-
-```bash
-git clone [https://github.com/tu-usuario/chatbot-deportivo-ia.git](https://github.com/tu-usuario/chatbot-deportivo-ia.git)
-cd chatbot-deportivo-ia
+⚽ Chatbot IA para Análisis Predictivo de Datos DeportivosEste repositorio contiene la arquitectura y el código fuente del proyecto "Desarrollo de un chat bot con IA para datos deportivos". El sistema integra ingeniería de datos en tiempo real, modelos predictivos y una interfaz conversacional inteligente.  🧠 Arquitectura y MetodologíaEl proyecto se estructura en tres subsistemas:Motor de Extracción y Minería de Datos: Implementa Web Scraping mediante Playwright para capturar métricas en vivo (cuotas, volúmenes transaccionados, minuto del partido). Los datos históricos se gestionan en formato Parquet para una alta eficiencia analítica.  Modelo de Machine Learning: Utiliza scikit-learn para aplicar modelos predictivos (Random Forest). El sistema normaliza los datos mediante una métrica de "Porcentaje de Impacto" para identificar anomalías de mercado (Smart Money).  Agente Conversacional y UI: Interfaz construida con Streamlit que facilita la interacción del usuario, la visualización de alertas en radar y la respuesta mediante LLMs (Modelos de Lenguaje).  🛠️ Stack TecnológicoLenguaje: Python 3.10+Análisis de Datos: Pandas, Numpy, Pyarrow (para archivos Parquet)IA / Agentes: LangChain, Google Gemini APIScraping: PlaywrightUI: Streamlit🚀 Guía de Instalación y Despliegue1. Preparación del entornoBashgit clone https://github.com/Lexeron/Agente-Deportivo.git
+cd Agente-Deportivo
 python -m venv venv
-source venv/bin/activate  # En Windows usa: venv\Scripts\activate
+venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+2. Configuración de seguridadCrea un archivo .env en la raíz con tu clave:PlaintextGOOGLE_API_KEY=tu_clave_aqui
+3. Ejecución del SistemaPara que el agente funcione, es obligatorio iniciar el navegador en modo depuración antes de lanzar el bot:Paso A: Iniciar el navegador (CMD/PowerShell)Bash"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\temp\perfil_bot"
+(Mantén esta ventana abierta mientras operes el bot).Paso B: Lanzar la interfazBashstreamlit run main.py
+📊 Roadmap de Desarrollo[ ] Fase 1 (Completada): Selección de stack y configuración de entorno.  [ ] Fase 2 (Actual): Integración de Scraping en vivo y modelo ML.  [ ] Fase 3: Implementación de base de datos relacional para histórico y escalabilidad.  [ ] Fase 4: Optimización de prompts para predicción precisa de resultados deportivos.  Nota del Supervisor: Recuerda que para el manejo de los archivos .parquet históricos, es fundamental utilizar las librerías pandas junto con el motor pyarrow, tal como se detalla en la guía técnica del proyecto. ¡Mantén la estructura de directorios /año/mes/día/ para no perder la trazabilidad de los datos!.
