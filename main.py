@@ -37,7 +37,7 @@ def cargar_cerebro_ia():
     """Carga el modelo RandomForest pre-entrenado con los 3.2M de datos históricos."""
     try:
         print("🧠 Cargando modelo de clasificación deportivo...")
-        modelo = joblib.load("modelo_agente_clasificador.pkl")
+        modelo = joblib.load("models/modelo_agente_clasificador.pkl")
         print("✅ Modelo cargado correctamente.")
         return modelo
     except Exception as e:
