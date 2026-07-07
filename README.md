@@ -47,6 +47,7 @@ venv\Scripts\activate
 streamlit run main.py
 ```
 📊 Roadmap de Desarrollo
+
 [ ] Optimización de la base de datos local para histórico de alertas.
 
 [ ] Refinamiento de prompts para análisis predictivo avanzado.
