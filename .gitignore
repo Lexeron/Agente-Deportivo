@@ -1,0 +1,45 @@
+# ==========================================
+# Entornos Virtuales y Caché de Python
+# ==========================================
+venv/
+env/
+.env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ==========================================
+# Datos y Modelos (¡Muy Importante!)
+# ==========================================
+# Ignoramos la carpeta de datos para no saturar Git con los históricos
+data/raw/
+data/processed/
+*.csv
+*.parquet
+*.json
+
+# Ignoramos los modelos pesados (Si el .pkl es pequeño, puedes forzar su subida con git add -f)
+*.pkl
+*.model
+*.h5
+
+# ==========================================
+# Jupyter Notebooks
+# ==========================================
+.ipynb_checkpoints
+
+# ==========================================
+# Variables de entorno y secretos
+# ==========================================
+.env
+.secrets
+keys.json
+
+# ==========================================
+# Logs y SO
+# ==========================================
+*.log
+.DS_Store
+Thumbs.db
