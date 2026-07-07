@@ -7,7 +7,7 @@ import numpy as np
 
 def construir_base_masiva():
     directorio_actual = os.path.dirname(os.path.abspath(__file__))
-    ruta_febrero = os.path.join(directorio_actual, "betwatch_football_2026_02", "2026", "02")
+    ruta_febrero = os.path.join(directorio_actual, "../betwatch_football_2026_02", "2026", "02")
 
     print(f"🚀 Iniciando el rastreo PROPORCIONAL en: {ruta_febrero}")
 
@@ -138,7 +138,7 @@ def construir_base_masiva():
         if 'date' in base_datos_final.columns:
             base_datos_final = base_datos_final.sort_values(by=['date']).reset_index(drop=True)
 
-        ruta_guardado = os.path.join(directorio_actual, "dataset_febrero_masivo.parquet")
+        ruta_guardado = os.path.join(directorio_actual, "../data/dataset_febrero_masivo.parquet")
         base_datos_final.to_parquet(ruta_guardado, engine='pyarrow', index=False)
 
         tiempo_total = (time.time() - inicio_tiempo) / 60

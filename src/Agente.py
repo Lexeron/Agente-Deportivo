@@ -182,7 +182,7 @@ if __name__ == '__main__':
 
     # 2. Construimos la ruta dinámica hacia el día 1 de febrero
     # Fíjate en la jerarquía /año/mes/día que exige Betwatch
-    RUTA_DATOS = os.path.join(DIRECTORIO_BASE, "betwatch_football_2026_02", "2026", "02", "01")
+    RUTA_DATOS = os.path.join(DIRECTORIO_BASE, "../betwatch_football_2026_02", "2026", "02", "01")
 
     MATCH_ID = 35108566
 

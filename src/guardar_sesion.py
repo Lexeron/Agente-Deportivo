@@ -8,7 +8,7 @@ def guardar_sesion_ultra_sigilo():
     with sync_playwright() as p:
         # Usamos argumentos para desactivar la bandera de 'automation'
         contexto = p.chromium.launch_persistent_context(
-            user_data_dir="./perfil_bot",
+            user_data_dir="../perfil_bot",
             channel="chrome",
             headless=False,
             # ESTA ES LA CLAVE: Borramos el cartel de 'automatizado'
