@@ -1,9 +1,49 @@
-⚽ Chatbot IA para Análisis Predictivo de Datos DeportivosEste repositorio contiene la arquitectura y el código fuente del proyecto "Desarrollo de un chat bot con IA para datos deportivos". El sistema integra ingeniería de datos en tiempo real, modelos predictivos y una interfaz conversacional inteligente.  🧠 Arquitectura y MetodologíaEl proyecto se estructura en tres subsistemas:Motor de Extracción y Minería de Datos: Implementa Web Scraping mediante Playwright para capturar métricas en vivo (cuotas, volúmenes transaccionados, minuto del partido). Los datos históricos se gestionan en formato Parquet para una alta eficiencia analítica.  Modelo de Machine Learning: Utiliza scikit-learn para aplicar modelos predictivos (Random Forest). El sistema normaliza los datos mediante una métrica de "Porcentaje de Impacto" para identificar anomalías de mercado (Smart Money).  Agente Conversacional y UI: Interfaz construida con Streamlit que facilita la interacción del usuario, la visualización de alertas en radar y la respuesta mediante LLMs (Modelos de Lenguaje).  🛠️ Stack TecnológicoLenguaje: Python 3.10+Análisis de Datos: Pandas, Numpy, Pyarrow (para archivos Parquet)IA / Agentes: LangChain, Google Gemini APIScraping: PlaywrightUI: Streamlit🚀 Guía de Instalación y Despliegue1. Preparación del entornoBashgit clone https://github.com/Lexeron/Agente-Deportivo.git
+# ⚽ Chatbot IA para Análisis Predictivo de Datos Deportivos
+
+Este repositorio contiene la arquitectura completa y el código fuente del proyecto "Desarrollo de un chat bot con IA para datos deportivos". El sistema integra ingeniería de datos en tiempo real, modelos predictivos y una interfaz conversacional inteligente.
+
+## 🧠 Arquitectura y Metodología
+
+1. **Motor de Extracción y Minería de Datos:** Scraping en vivo mediante Playwright. Datos históricos gestionados en formato `.parquet` para eficiencia analítica.
+2. **Modelo de Machine Learning:** Clasificador basado en Random Forest (`scikit-learn`) que aplica la métrica de "Porcentaje de Impacto" para detectar anomalías de mercado.
+3. **Agente Conversacional y UI:** Interfaz web interactiva con Streamlit, conectada a LLMs mediante LangChain.
+
+## 🛠️ Stack Tecnológico
+* **Lenguaje:** Python 3.10+
+* **Machine Learning:** Scikit-Learn, Pandas, Numpy
+* **Agente IA:** LangChain / Google Gemini API
+* **Scraping:** Playwright
+* **Interfaz Gráfica:** Streamlit
+
+## 🚀 Guía Completa de Ejecución (Paso a Paso)
+
+### Paso 1: Clonar el repositorio
+```bash
+git clone [https://github.com/Lexeron/Agente-Deportivo.git](https://github.com/Lexeron/Agente-Deportivo.git)
 cd Agente-Deportivo
+
+### Paso 2: Crear el entorno virtual e instalar dependencias
 python -m venv venv
-venv\Scripts\activate  # Windows
+venv\Scripts\activate
 pip install -r requirements.txt
-2. Configuración de seguridadCrea un archivo .env en la raíz con tu clave:PlaintextGOOGLE_API_KEY=tu_clave_aqui
-3. Ejecución del SistemaPara que el agente funcione, es obligatorio iniciar el navegador en modo depuración antes de lanzar el bot:Paso A: Iniciar el navegador (CMD/PowerShell)Bash"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\temp\perfil_bot"
-(Mantén esta ventana abierta mientras operes el bot).Paso B: Lanzar la interfazBashstreamlit run main.py
-📊 Roadmap de Desarrollo[ ] Fase 1 (Completada): Selección de stack y configuración de entorno.  [ ] Fase 2 (Actual): Integración de Scraping en vivo y modelo ML.  [ ] Fase 3: Implementación de base de datos relacional para histórico y escalabilidad.  [ ] Fase 4: Optimización de prompts para predicción precisa de resultados deportivos.  Nota del Supervisor: Recuerda que para el manejo de los archivos .parquet históricos, es fundamental utilizar las librerías pandas junto con el motor pyarrow, tal como se detalla en la guía técnica del proyecto. ¡Mantén la estructura de directorios /año/mes/día/ para no perder la trazabilidad de los datos!.
+
+### Paso 3: Configurar variables de entorno
+Crea un archivo .env en la raíz y añade tu clave:
+GOOGLE_API_KEY=tu_clave_aqui
+
+### Paso 4: Preparar el navegador (Navegador persistente)
+Abre una terminal (CMD o PowerShell) y ejecuta este comando para iniciar el puerto de depuración:
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\temp\perfil_bot"
+Nota: Debes dejar esta ventana de Chrome abierta mientras el bot esté funcionando.
+
+### Paso 5: Lanzar el Agente
+En una nueva terminal, activa el entorno virtual y ejecuta:
+venv\Scripts\activate
+streamlit run main.py
+
+📊 Roadmap de Desarrollo
+[ ] Optimización de la base de datos local para histórico de alertas.
+
+[ ] Refinamiento de prompts para análisis predictivo avanzado.
+
+[ ] Implementación de lógica de pagos para servicios premium.
